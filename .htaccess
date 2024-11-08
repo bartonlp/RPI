@@ -1,0 +1,16 @@
+# We got here via bartonphillips.org:8000 or via rpi.bartonphillips.org.
+# If rpi.bartonphillips.org the request was initially fielded by my HP-envy and then redirected via the .htaccess file to here as
+# bartonphillips.org:8000.
+
+<RequireAll>
+ Require all granted
+</RequireAll>
+
+# BLP 2024-07-28 - WE ARE USING SiteClass on our RPI!! Check the index.php to make sure!
+SetEnv SITELOADNAME /var/www/vendor/bartonlp/simple-site-class/includes/siteload.php
+Header set Access-Control-Allow-Origin "*"
+
+RewriteEngine on
+RewriteRule ^csstest-(.*)\.css$ https://bartonlp.com/otherpages/tracker.php?id=$1&page=csstest [L,QSA]
+RewriteRule ^robots.txt$ robots.php [L,NC]
+RewriteRule ^Sitemap.xml$ sitemap.php [L,NC]

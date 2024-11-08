@@ -1,0 +1,54 @@
+/*
+ * SPECIAL json for use by siteload.php. Normal json will not allow
+ * comments.
+ */
+{
+    "siteDomain": "bartonphillips.org",
+    "siteName": "Rpi",
+    "path": "/var/www/bartonphillips.org:8000",
+    "className": "SiteClass",
+    "copyright": "Barton L. Phillips",
+    "author": "Barton L. Phillips, mailto:bartonphillips@gmail.com",
+    "address": "New Bern, North Carolina",
+    "keywords": "RPI, Raspberry Pi, Test system",
+    "title": "HI THERE",
+    "canonical": "http://www.bartonphillips.com",
+    "preheadcomment": "<!-- This is the index.php on Rpi -->",
+    "masterdb": "barton",
+    "dbinfo": {
+        "host": "localhost", // For RPI use local host
+        "user": "barton",
+        "database": "barton",
+        "engine": "mysql" // If Pdo. This can be sqlite, mysql or pgsql.
+    },
+    "errorMode": { // only $this. 
+      "development": true, // development automatically sets email to true.
+                         // If development is true then noEmail will be
+                         // set to true unless noEmail is set to false!
+                         // Only false not null or just missing.
+      "noEmail": null,   // Set it to null will not affect the true above which sets it to true also.
+      "noHtml": false,
+      "noOutput": false
+    },
+    // aboutwebsite.php is in this directory on the RPI.
+    "aboutwebsite": "<h2><a target='_blank' href='./aboutwebsite.php?site=Rpi&domain=bartonphillips.org'>About This Site</a></h2>",
+    // For RPI use these includes.
+    "headFile": "/var/www/bartonphillips.org:8000/includes/head.i.php",
+    "bannerFile": "/var/www/bartonphillips.org:8000/includes/banner.i.php",
+    "footerFile": "/var/www/bartonphillips.org:8000/includes/footer.i.php",
+    // For this server (RPI) I want to do all the database logic on
+    // this server. That is tracker.js, tracker.php and beacon.php
+    // BLP 2024-11-06 - the following are symlinks to
+    // /var/www/vendor/bartonlp/site-class/includes
+    "trackerLocationJs": "https://bartonphillips.org:8000/tracker.js", 
+    "trackerLocation": "https://bartonphillips.org:8000/tracker.php",
+    "beaconLocation": "https://bartonphillips.org:8000/beacon.php",
+    "count": true,
+    // With the / before the images will be from
+    // https://bartonphillips.net/
+    "trackerImg1": "/images/blp-image.png", // The trackerImg must have a slash before or make them a full url.
+    "trackerImg2": "/images/blank.png",
+    "EMAILADDRESS": "bartonphillips@gmail.com", // or $b->emailAddress
+    "EMAILRETURN": "bartonphillips@gmail.com", // only $this
+    "EMAILFROM": "webmaster@bartonphillips.com" // only $this
+}
